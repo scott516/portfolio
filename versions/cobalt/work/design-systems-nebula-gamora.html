@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building design systems as leverage: Nebula and Gamora — Lucia Scott</title>
+  <meta name="description" content="Led the redesign and restructure of the existing app design system into Nebula, and co-designed Gamora from the ground up — the new design system for our sister site, Deals.com. Two systems, one philosophy: make the right thing the easy thing, and turn design into leverage.">
+  <meta name="author" content="Lucia Scott">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Building design systems as leverage: Nebula and Gamora — Lucia Scott">
+  <meta property="og:description" content="Led the redesign and restructure of the existing app design system into Nebula, and co-designed Gamora from the ground up — the new design system for our sister site, Deals.com. Two systems, one philosophy: make the right thing the easy thing, and turn design into leverage.">
+  <meta name="theme-color" content="#edf1f0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ff0000'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+  <link rel="stylesheet" href="../css/accent.css">
+</head>
+<body class="cs">
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__inner grid8">
+      <a class="nav__link" href="../index.html#work" data-nav="work">Work</a>
+      <a class="nav__link" href="../index.html#about" data-nav="about">About</a>
+      <a class="nav__link" href="https://www.linkedin.com/in/luciaparkscott" target="_blank" rel="noopener">Resume</a>
+      <a class="nav__link" href="../index.html#contact" data-nav="contact">Contact</a>
+    </div>
+  </nav>
+  <main class="shell">
+
+    <a class="cs-back" href="../index.html#work"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> All work</a>
+
+    <header class="cs-hero grid8">
+      <div class="cs-hero__head" data-reveal>
+        <div class="cs-hero__subtitle">Make the right thing the easy thing</div>
+        <h1 class="cs-hero__title">Building design systems as leverage: Nebula and Gamora</h1>
+      </div>
+      <div class="cs-hero__metric" data-reveal>
+        <div class="cs-metric__num">2 systems</div>
+        <div class="cs-metric__label">Nebula + Gamora, one shared DNA</div>
+      </div>
+    </header>
+
+    <section class="cs-summary grid8">
+      <div class="cs-summary__inner"><p>Led the redesign and restructure of the existing app design system into Nebula, and co-designed Gamora from the ground up — the new design system for our sister site, Deals.com. Two systems, one philosophy: make the right thing the easy thing, and turn design into leverage.</p></div>
+    </section>
+
+    <section class="cs-overview" data-reveal aria-label="Overview">
+      <div class="cs-overview__grid"><div><div class="cs-ov__k">Initiative</div><div class="cs-ov__v">Design system redesign (Nebula) + new system from scratch (Gamora)</div></div><div><div class="cs-ov__k">Systems</div><div class="cs-ov__v">Nebula — VoucherCodes app DS 2.0 · Gamora — Deals.com DS</div></div><div><div class="cs-ov__k">Scope</div><div class="cs-ov__v">Tokens, components, patterns, documentation, adoption</div></div><div><div class="cs-ov__k">Role</div><div class="cs-ov__v">Lead (Nebula) · Co-lead (Gamora)</div></div></div>
+    </section>
+
+    <div class="cs-body grid8">
+    <section class="cs-section acc-orange" data-reveal>
+      <div class="cs-section__grid">
+        <div class="cs-section__label">Problem</div>
+        <div class="cs-section__content"><p class="cs-section__lead">The existing app design system had grown organically over several years. It worked — but it was quietly costing the team speed, consistency, and accessibility.</p><ul class="cs-list"><li>Structural drift — components had diverged from the tokens beneath them, so the same decision existed in multiple places with different values.</li><li>Unclear component APIs — variants and states weren't consistently named or structured.</li><li>Theming was bolted on, not built in — dark mode, accessibility modes, and brand variants required bespoke work.</li><li>Documentation gaps, and no shared foundation for the incoming sister site.</li></ul><p class="cs-closer">The opportunity: treat the system as a product — with users, a roadmap, and success metrics — built to hold up at scale.</p></div>
+      </div>
+    </section>
+    <section class="cs-section acc-blue" data-reveal>
+      <div class="cs-section__grid">
+        <div class="cs-section__label">Process</div>
+        <div class="cs-section__content"><div class="cs-sub"><div class="cs-sub__h">Rebuild the foundation first</div><p class="cs-sub__p">Started Nebula from the token layer up — colour, type, spacing, radius, elevation, motion — defined as the single source of truth and mapped cleanly between Figma variables and code, structured to support theming at scale without forking.</p></div><div class="cs-sub"><div class="cs-sub__h">Redesign the component library</div><p class="cs-sub__p">Components with clear, consistent APIs that map 1:1 with engineering, flexible enough for real product needs but opinionated enough to enforce consistency by default, with a shared naming system across design and engineering.</p></div><div class="cs-sub"><div class="cs-sub__h">Bake accessibility in at the foundation</div><p class="cs-sub__p">Treated WCAG compliance as a system property, not a per-screen checklist — contrast, focus states, keyboard support, and semantic structure inherited by every surface.</p></div><div class="cs-sub"><div class="cs-sub__h">Ship documentation teams actually use</div><p class="cs-sub__p">Usage, anatomy, and do/don't guidance alongside each component, with live examples and code snippets at the point of need — reducing the cost of doing the right thing.</p></div><div class="cs-sub"><div class="cs-sub__h">Governance &amp; contribution</div><p class="cs-sub__p">A clear path for how components get proposed, reviewed, promoted, and deprecated — balancing central ownership with product-team input.</p></div><div class="cs-sub"><div class="cs-sub__h">Co-design Gamora for Deals.com</div><p class="cs-sub__p">With Nebula stable, applied the same token architecture, component API model, and governance to build Gamora from the ground up — tuned to feel distinctly Deals.com while keeping the underlying model consistent.</p></div></div>
+      </div>
+    </section>
+    <section class="cs-section acc-green" data-reveal>
+      <div class="cs-section__grid">
+        <div class="cs-section__label">Outcome</div>
+        <div class="cs-section__content"><ul class="cs-list"><li>Nebula — a redesigned system with a clean token layer, consistent component library, and accessibility by default.</li><li>Gamora — a brand-new system for Deals.com, co-designed from scratch, reusing Nebula's structural principles.</li><li>A streamlined Figma file structure with a Build / WIP split so teams always know what's shipped, building, or in discovery.</li><li>A shared vocabulary and a governance model across design and engineering — speed, consistency across two brands, and accessibility as a default.</li></ul></div>
+      </div>
+    </section>
+    </div>
+
+    <section class="cs-reflections" data-reveal>
+      <h2>Reflections</h2>
+      <ul><li>A design system lives or dies on leverage. Every decision had to make the next hundred screens faster, more consistent, and more accessible — not just the one in front of us.</li><li>Rebuilding from the token layer up was slower at the start and dramatically faster afterwards. You can't shortcut the foundation without paying for it later.</li><li>Co-designing Gamora straight after Nebula is the clearest proof the system works: we didn't reinvent the wheel, we scaled it.</li></ul>
+    </section>
+
+    <nav class="cs-pager" aria-label="More work">
+      <a href="app-strategy-facilitation.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="txt"><span class="lbl">Previous</span>Aligning the business on app strategy through hands-on facilitation</span></a>
+      <a href="biind.html" style="text-align:right"><span class="txt"><span class="lbl">Next</span>Biind: designing an alternative music platform from 0→1</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </main>
+
+  <footer class="footer shell" id="contact">
+    <div class="grid8" style="align-items:end">
+      <div class="footer__wordmark"><p class="wordmark">Lucia&nbsp;Scott</p></div>
+      <div class="footer__contact">
+        <span class="mark " aria-hidden="true"></span>
+        <a class="footer__link" href="mailto:luciaparkscott@gmail.com">luciaparkscott@gmail.com</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/luciaparkscott" target="_blank" rel="noopener">linkedin.com/in/luciaparkscott</a>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span data-year>2026</span> Lucia Scott. Product design portfolio.</span>
+      <a href="../index.html#work">Back to all work →</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

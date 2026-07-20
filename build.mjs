@@ -192,7 +192,7 @@ function card(cs) {
 }
 
 /* --------------------------------------------------------------- homepage */
-function renderHome() {
+function renderHome(extraCss = []) {
   const cards = caseStudies.map(card).join("\n      ");
 
   const stats = site.stats
@@ -207,6 +207,7 @@ function renderHome() {
   return `${head({
     title: `${site.name} — ${site.role}`,
     description: site.bio,
+    extraCss,
   })}
 <body>
   ${nav()}
@@ -299,7 +300,7 @@ function renderSection(sec) {
     </section>`;
 }
 
-function renderCase(cs, prev, next) {
+function renderCase(cs, prev, next, extraCss = []) {
   const overview = cs.overview
     .map(([k, v]) => `<div><div class="cs-ov__k">${esc(k)}</div><div class="cs-ov__v">${esc(v)}</div></div>`)
     .join("");
@@ -323,7 +324,7 @@ function renderCase(cs, prev, next) {
     title: `${cs.title} — ${site.name}`,
     description: cs.summary,
     base: "../",
-    extraCss: ["css/case-study.css"],
+    extraCss: ["css/case-study.css", ...extraCss],
   })}
 <body class="cs">
   ${nav("../")}
@@ -383,22 +384,37 @@ function renderCase(cs, prev, next) {
 }
 
 /* -------------------------------------------------------------------- run */
-async function build() {
-  await writeFile(join(ROOT, "index.html"), renderHome(), "utf8");
-  await mkdir(join(ROOT, "work"), { recursive: true });
+// outDir: where to write index.html + work/*.html (defaults to the repo root).
+// accent: optional hex override for the --red token (the site's sole
+//   interactive accent — brand mark, nav/footer/card hover states). When
+//   set, writes an outDir/css/accent.css override and links it after the
+//   canonical stylesheets, leaving css/styles.css itself untouched.
+export async function build({ outDir = ROOT, accent } = {}) {
+  const extraCss = [];
+  if (accent) {
+    await mkdir(join(outDir, "css"), { recursive: true });
+    await writeFile(join(outDir, "css", "accent.css"), `:root { --red: ${accent}; }\n`, "utf8");
+    extraCss.push("css/accent.css");
+  }
+
+  await writeFile(join(outDir, "index.html"), renderHome(extraCss), "utf8");
+  await mkdir(join(outDir, "work"), { recursive: true });
   for (let i = 0; i < caseStudies.length; i++) {
     const prev = caseStudies[i - 1];
     const next = caseStudies[i + 1];
     await writeFile(
-      join(ROOT, "work", `${caseStudies[i].slug}.html`),
-      renderCase(caseStudies[i], prev, next),
+      join(outDir, "work", `${caseStudies[i].slug}.html`),
+      renderCase(caseStudies[i], prev, next, extraCss),
       "utf8"
     );
   }
-  console.log(`Built index.html + ${caseStudies.length} case study pages.`);
+  console.log(`Built ${outDir}: index.html + ${caseStudies.length} case study pages.`);
 }
 
-build().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Only auto-run when invoked directly (`node build.mjs`), not when imported.
+if (import.meta.url === `file://${process.argv[1]}`) {
+  build().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
