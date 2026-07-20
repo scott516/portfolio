@@ -37,6 +37,17 @@ templates in `build.mjs`. Add a case study by appending an object to the
 `caseStudies` array (`layout: "full"` gives it device mockups; `"half"` makes it
 a text tile). No build tooling or `npm install` required — plain Node ≥ 18.
 
+## Design variants
+
+`node build-variants.mjs` generates a small gallery of accent-color variants
+for side-by-side comparison — layout, grid, and typography are untouched in
+every variant; only the site's sole interactive accent (`--red` in
+`css/styles.css`: the brand mark, nav/footer/card hover states) changes.
+Output goes to `versions/<slug>/` (a full copy of the site per variant) plus
+a `versions.html` gallery page at the repo root linking to each one,
+including the default. Add or edit variants in the `variants` array at the
+top of `build-variants.mjs`.
+
 ## Preview locally
 
 ```bash

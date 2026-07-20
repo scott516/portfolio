@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design variants — Lucia Scott</title>
+  <meta name="description" content="Accent-color variants of the Lucia Scott portfolio, for side-by-side comparison.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ff0000'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .variants-shell { padding-top: clamp(32px, 6vw, 72px); padding-bottom: clamp(48px, 8vw, 96px); }
+    .variants-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px; margin-top: 28px;
+    }
+    .variant-card {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--card); padding: 22px; text-decoration: none; color: inherit;
+      transition: transform .15s ease;
+    }
+    .variant-card:hover { transform: translateY(-3px); }
+    .variant-card__swatch { width: 40px; height: 40px; border-radius: 50%; display: block; }
+    .variant-card__label { font-family: var(--sans); font-weight: 700; font-size: 16px; color: var(--ink); }
+    .variant-card__note { font-family: var(--sans); font-size: 14px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="shell variants-shell">
+    <a class="cs-back" style="padding-top:0" href="index.html">← Back to portfolio</a>
+    <header style="margin-top:24px">
+      <h1 class="wordmark" style="font-size:clamp(36px,6vw,64px)">Design variants</h1>
+      <p style="font-family:var(--sans); color:var(--muted); font-size:16px; max-width:52ch; margin-top:12px;">
+        Same layout, grid, and typography throughout — only the interactive accent colour changes
+        (brand mark, nav/footer/card hover states).
+      </p>
+    </header>
+    <div class="variants-grid">
+      <a class="variant-card" href="index.html">
+    <span class="variant-card__swatch" style="background:#ff0000"></span>
+    <span class="variant-card__label">Default — Figma exact</span>
+    <span class="variant-card__note">The original template match: red accent.</span>
+  </a>
+      <a class="variant-card" href="versions/cobalt/index.html">
+    <span class="variant-card__swatch" style="background:#2C4BA0"></span>
+    <span class="variant-card__label">Cobalt</span>
+    <span class="variant-card__note">A confident indigo-blue accent.</span>
+  </a>
+      <a class="variant-card" href="versions/amber/index.html">
+    <span class="variant-card__swatch" style="background:#B7791F"></span>
+    <span class="variant-card__label">Amber</span>
+    <span class="variant-card__note">A warm, museum-label gold accent.</span>
+  </a>
+      <a class="variant-card" href="versions/verdant/index.html">
+    <span class="variant-card__swatch" style="background:#1F6F5C"></span>
+    <span class="variant-card__label">Verdant</span>
+    <span class="variant-card__note">A deep, refined teal-emerald accent.</span>
+  </a>
+    </div>
+  </main>
+</body>
+</html>
