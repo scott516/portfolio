@@ -71,6 +71,12 @@ function nav(base = "") {
 
 const mark = (cls = "") => `<span class="mark ${cls}" aria-hidden="true"></span>`;
 
+// Rendered PNG of the "Lucia Scott" wordmark (assets/wordmark.png) — locks the
+// exact letterforms/spacing as a brand asset rather than relying on live text
+// + web-font substitution across browsers.
+const wordmarkImg = (base = "") =>
+  `<img class="wordmark-img" src="${base}assets/wordmark.png" width="2714" height="612" alt="Lucia Scott">`;
+
 /* --------------------------------------------------------- device screens */
 function phoneScreen(type, v = "a") {
   switch (type) {
@@ -215,7 +221,7 @@ function renderHome(extraCss = []) {
 
     <header class="hero grid8" id="top">
       <div class="hero__wordmark" data-reveal>
-        <h1 class="wordmark">Lucia&nbsp;Scott</h1>
+        <h1 class="hero__wordmark-h">${wordmarkImg()}</h1>
       </div>
       <div class="hero__aside" data-reveal>
         ${mark()}
@@ -254,7 +260,7 @@ function renderHome(extraCss = []) {
     </div>
     <div class="grid8" style="align-items:end">
       <div class="footer__wordmark">
-        <p class="wordmark">Lucia&nbsp;Scott</p>
+        <p class="footer__wordmark-p">${wordmarkImg()}</p>
       </div>
       <div class="footer__contact">
         ${mark()}
@@ -365,7 +371,7 @@ function renderCase(cs, prev, next, extraCss = []) {
 
   <footer class="footer shell" id="contact">
     <div class="grid8" style="align-items:end">
-      <div class="footer__wordmark"><p class="wordmark">Lucia&nbsp;Scott</p></div>
+      <div class="footer__wordmark"><p class="footer__wordmark-p">${wordmarkImg("../")}</p></div>
       <div class="footer__contact">
         ${mark()}
         <a class="footer__link" href="mailto:${site.email}">${site.email}</a>

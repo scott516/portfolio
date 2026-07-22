@@ -21,9 +21,11 @@ const variants = [
 async function copyStatic(outDir) {
   await mkdir(join(outDir, "css"), { recursive: true });
   await mkdir(join(outDir, "js"), { recursive: true });
+  await mkdir(join(outDir, "assets"), { recursive: true });
   await copyFile(join(ROOT, "css/styles.css"), join(outDir, "css/styles.css"));
   await copyFile(join(ROOT, "css/case-study.css"), join(outDir, "css/case-study.css"));
   await copyFile(join(ROOT, "js/main.js"), join(outDir, "js/main.js"));
+  await copyFile(join(ROOT, "assets/wordmark.png"), join(outDir, "assets/wordmark.png"));
 }
 
 function swatchCard({ label, accent, note, href }) {
