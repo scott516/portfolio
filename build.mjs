@@ -75,7 +75,7 @@ const mark = (cls = "") => `<span class="mark ${cls}" aria-hidden="true"></span>
 // exact letterforms/spacing as a brand asset rather than relying on live text
 // + web-font substitution across browsers.
 const wordmarkImg = (base = "") =>
-  `<img class="wordmark-img" src="${base}assets/wordmark.png" width="2714" height="612" alt="Lucia Scott">`;
+  `<img class="wordmark-img" src="${base}assets/wordmark.png" width="2511" height="612" alt="Lucia Scott">`;
 
 /* --------------------------------------------------------- device screens */
 function phoneScreen(type, v = "a") {

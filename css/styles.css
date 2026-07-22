@@ -151,7 +151,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2714 / 612;   /* assets/wordmark.png's exact intrinsic ratio */
+  aspect-ratio: 2511 / 612;   /* assets/wordmark.png's exact intrinsic ratio */
 }
 .hero__aside {
   grid-column: 7 / 9;
