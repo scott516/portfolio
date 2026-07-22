@@ -141,6 +141,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin: 0;
   font-size: clamp(58px, 15.2vw, 196px);
 }
+/* "Lucia Scott" brand wordmark — rendered as a locked PNG (assets/wordmark.png)
+   rather than live text, so letterforms/spacing stay pixel-exact regardless
+   of font loading. .wordmark itself stays available for reuse (e.g. the
+   variant gallery heading). */
+.hero__wordmark-h,
+.footer__wordmark-p { margin: 0; line-height: 0; }
+.wordmark-img { display: block; width: 100%; height: auto; }
 .hero__aside {
   grid-column: 7 / 9;
   display: flex;
