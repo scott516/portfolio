@@ -147,7 +147,12 @@ ul { margin: 0; padding: 0; list-style: none; }
    variant gallery heading). */
 .hero__wordmark-h,
 .footer__wordmark-p { margin: 0; line-height: 0; }
-.wordmark-img { display: block; width: 100%; height: auto; }
+.wordmark-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2714 / 612;   /* assets/wordmark.png's exact intrinsic ratio */
+}
 .hero__aside {
   grid-column: 7 / 9;
   display: flex;
