@@ -150,8 +150,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .wordmark-img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 2511 / 612;   /* assets/wordmark.png's exact intrinsic ratio */
+  height: auto;   /* renders at the image's own natural ratio — drop in any
+                     wordmark.png and it keeps that file's exact proportions */
 }
 .hero__aside {
   grid-column: 7 / 9;
