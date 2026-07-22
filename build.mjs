@@ -54,7 +54,7 @@ function nav(base = "") {
     { label: "Work", href: `${base}index.html#work`, nav: "work" },
     { label: "About", href: `${base}index.html#about`, nav: "about" },
     { label: "Resume", href: site.linkedinUrl, ext: true },
-    { label: "Contact", href: `${base}index.html#contact`, nav: "contact" },
+    { label: "Contact", href: `mailto:${site.email}`, nav: "contact" },
   ];
   return `<nav class="nav" aria-label="Primary">
     <div class="nav__inner grid8">
@@ -250,7 +250,7 @@ function renderHome(extraCss = []) {
       <a class="nav__link" href="#work" data-nav="work">Work</a>
       <a class="nav__link" href="#about" data-nav="about">About</a>
       <a class="nav__link" href="${site.linkedinUrl}" target="_blank" rel="noopener">Resume</a>
-      <a class="nav__link is-active" href="#contact" data-nav="contact">Contact</a>
+      <a class="nav__link is-active" href="mailto:${site.email}" data-nav="contact">Contact</a>
     </div>
     <div class="grid8" style="align-items:end">
       <div class="footer__wordmark">
