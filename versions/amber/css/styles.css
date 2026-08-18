@@ -24,9 +24,10 @@
   --sans:  "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Layout */
-  --pad: 16px;            /* page + grid padding  */
+  --pad: 16px;            /* page + grid padding — 16px gutter at every size */
   --gutter: 16px;         /* grid column gap      */
-  --maxw: 1280px;         /* frame width          */
+  --maxw: none;           /* full-bleed: content keeps a 16px side margin at
+                             all widths instead of capping + centering        */
   --radius: 0px;
 }
 
