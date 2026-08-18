@@ -124,7 +124,7 @@ ul { margin: 0; padding: 0; list-style: none; }
    Hero
    ========================================================================== */
 .hero {
-  padding-top: clamp(24px, 6vw, 88px);
+  padding-top: clamp(96px, 27vw, 384px);  /* ~440px nav→wordmark gap on desktop */
   padding-bottom: clamp(28px, 6vw, 96px);
   align-items: end;
   row-gap: 32px;
