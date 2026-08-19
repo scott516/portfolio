@@ -132,7 +132,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero__wordmark {
   grid-column: 1 / 7;
   align-self: end;
-  padding-right: 4px;   /* ~20px gap to the bio (4 + 16px gutter) */
+  padding-right: 104px;   /* ~120px gap to the bio (104 + 16px gutter) */
 }
 .wordmark {
   font-family: var(--serif);
