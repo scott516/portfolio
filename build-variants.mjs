@@ -26,6 +26,7 @@ async function copyStatic(outDir) {
   await copyFile(join(ROOT, "css/case-study.css"), join(outDir, "css/case-study.css"));
   await copyFile(join(ROOT, "js/main.js"), join(outDir, "js/main.js"));
   await copyFile(join(ROOT, "assets/wordmark.png"), join(outDir, "assets/wordmark.png"));
+  await copyFile(join(ROOT, "assets/mark.png"), join(outDir, "assets/mark.png"));
 }
 
 function swatchCard({ label, accent, note, href }) {
