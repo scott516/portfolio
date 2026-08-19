@@ -104,19 +104,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   width: 64px;
   height: 64px;
   flex: 0 0 auto;
-  background: var(--red);
+  /* brand mark image (assets/mark.png); red fallback if it fails to load */
+  background: url("../assets/mark.png") center / cover no-repeat, var(--red);
   position: relative;
   overflow: hidden;
-}
-.mark::before {
-  /* subtle darkened overlay to echo the multiply-blended source mark */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(120% 120% at 78% 88%, rgba(0,0,0,.55), rgba(0,0,0,0) 55%),
-    linear-gradient(135deg, rgba(255,255,255,.18), rgba(0,0,0,.28));
-  mix-blend-mode: multiply;
 }
 .mark--sm { width: 44px; height: 44px; }
 
