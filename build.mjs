@@ -165,6 +165,26 @@ function phoneScreen(type, v = "a") {
           <div class="scr__comp">Nav bar <span class="pill pill--app">app</span></div>
         </div>
       </div>`;
+    case "deals": {
+      const d = v === "a"
+        ? { title: "Sony WH-1000XM5 Headphones", price: "£189", rrp: "£379", deal: "50% off + up to £25 back", merch: "Currys", timer: "Ends in 03:24:59", grad: "linear-gradient(135deg,#1f2937,#4b5563)" }
+        : { title: "Ninja Air Fryer Dual Zone", price: "£129", rrp: "£219", deal: "40% off + up to £15 back", merch: "Argos", timer: "Ends in 07:52:10", grad: "linear-gradient(135deg,#7c2d12,#c2410c)" };
+      return `<div class="scr scr--deals">
+        <div class="scr__status"><span>9:41</span><span class="dots">••• 5G ▮</span></div>
+        <div class="scr__dealhead">Products <span class="beta">BETA</span></div>
+        <div class="scr__drop">⚡ Weekly drop ends in 2d 04h · Notify me</div>
+        <div class="scr__deal">
+          <div class="scr__dealimg" style="background:${d.grad}"><span class="chip chip--vip">VIP</span><span class="chip chip--hot">🔥 Hot</span></div>
+          <div class="scr__dealbody">
+            <div class="scr__dealtitle">${d.title}</div>
+            <div class="scr__dealprice"><b>${d.price}</b> <s>${d.rrp}</s></div>
+            <div class="scr__dealtag">${d.deal}</div>
+            <div class="scr__dealmeta"><span>${d.merch}</span><span class="timer">${d.timer}</span></div>
+          </div>
+        </div>
+        <div class="scr__foot"><div class="scr__ico">♥</div><div class="scr__btn">Get deal</div></div>
+      </div>`;
+    }
     default:
       return `<div class="scr"></div>`;
   }
@@ -176,7 +196,7 @@ const phone = (type, v) =>
 /* ------------------------------------------------------------- home card */
 function card(cs) {
   const meta = cs.overview
-    .filter(([k]) => ["Surface", "Platform", "Surfaces", "Role", "Timeline", "Stage"].includes(k))
+    .filter(([k]) => ["Surface", "Platform", "Surfaces", "Role", "Timeline", "Stage", "Status"].includes(k))
     .slice(0, 3)
     .map(([, v]) => `<span>${esc(v)}</span>`)
     .join("");
