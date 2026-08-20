@@ -34,6 +34,87 @@ export const site = {
 // layout: "full" cards carry device mockups; "half" cards pair up as text tiles.
 export const caseStudies = [
   {
+    slug: "product-deals",
+    layout: "full",
+    mockup: "deals",
+    title: "Product Deals: launching a new 0→1 deal surface in the app",
+    cardDescription:
+      "A new product-led Products tab — a weekly-refreshed feed of hand-picked deals with live countdowns and stacked VIP cashback.",
+    subtitle: "Extending VoucherCodes beyond codes: a curated, product-led deal surface built for discovery and urgency",
+    summary:
+      "A new Products tab in the app — a weekly-refreshed feed of hand-picked product deals with " +
+      "real prices, live countdown timers, and VIP cashback stacking. It moves VoucherCodes from a " +
+      "purely code-led to a product-led discovery experience, and shipped in beta with a built-in " +
+      "feedback loop and a defined measurement plan.",
+    heroMetric: { value: "0→1", label: "New product-led deal surface, shipped in beta" },
+    overview: [
+      ["Initiative", "Product Deals — new app tab (0→1)"],
+      ["Focus", "Discovery, commercial expansion, retention"],
+      ["Surface", 'App — new "Products" tab (iOS & Android)'],
+      ["Status", "Beta — 2026"],
+      ["Role", "Product Design (lead)"],
+    ],
+    sections: [
+      {
+        title: "Problem",
+        accent: "orange",
+        paras: [
+          "For its entire life, VoucherCodes has been organised around one unit: the code. Discovery starts from a merchant or a voucher, and the product a user actually wants sits one step removed from the experience. That model works — but it leaves a growing gap.",
+        ],
+        bullets: [
+          "Discovery is code-led, not product-led — users increasingly shop around a specific product, but the app had no surface that led with the product, the price, and the saving.",
+          "No home for genuinely time-limited deals — no dedicated, curated space for the sharp, expiring, blink-and-you-miss-it deals that drive urgency and repeat visits.",
+          "Urgency and scarcity were under-used — countdown timers, 'hot' signals, and a weekly cadence are proven engagement levers the app wasn't using.",
+          "VIP cashback wasn't visible at the point of discovery — the strongest version of a deal, discount plus VIP cashback stacked together, wasn't surfaced where users decide.",
+        ],
+        closer:
+          "The opportunity: launch a new surface that leads with the product, stacks the full VoucherCodes proposition (discount + VIP cashback), and uses urgency and personalisation to bring users back every week.",
+      },
+      {
+        title: "Process",
+        accent: "blue",
+        subsections: [
+          { h: "Frame the bet", p: "Positioned Product Deals as a 0→1 commercial surface, not a feature bolted onto an existing screen. It needed to earn its own tab in the bottom navigation and stand up as a distinct product with its own discovery, browsing, and redemption model." },
+          { h: "Lead with the product", p: "Designed a card built around what the user actually cares about: a clear product image, the live price against the RRP, and a bold sale proposition that stacks both halves of the offer — e.g. 50% off + up to £25 back — with the merchant and a VIP badge where relevant." },
+          { h: "Borrow proven retail urgency patterns", p: "Built in the scarcity mechanics that make deal apps sticky without overwhelming the screen: per-deal countdown timers, 'hot' and recency tags, graceful expired states, and a persistent weekly 'deal drop' countdown with a notify-me opt-in." },
+          { h: "Personalise from the first session", p: "Designed a lightweight taste-capture flow — 'What are you into?' — asking users to pick at least three favourite merchants or categories so the feed is relevant from day one. It doubles as a first-party signal for merchandising and CRM." },
+          { h: "Design the browsing system, not just the feed", p: "Category 'Top 10' lists (Electronics, Travel, Home…) plus an All view, sort by recently added / expiry / most popular, a filter to narrow the feed, and clear empty, expired, and confirmation states throughout." },
+          { h: "Keep the VoucherCodes DNA", p: "Product Deals leads with the product but resolves through the model that already works: tapping through copies the code and hands the user off to the merchant ('Code copied — taking you to Currys'), and VIP cashback stacks on top per the existing reward rules. New surface, familiar redemption." },
+          { h: "Ship as a measurable beta", p: "Launched under a BETA label with a visible 'Leave us feedback' entry point and a notify-me mechanic — treating the first release as a live experiment with a direct qualitative channel, not a finished product." },
+        ],
+      },
+      {
+        title: "Outcome",
+        accent: "green",
+        paras: [
+          "Product Deals launched in beta, so this is an early-stage bet rather than a settled result — here's what the design is built to unlock, and how it will be judged.",
+        ],
+        bullets: [
+          "A new, product-led discovery surface that gives users a reason to open the app around a product, not just a code.",
+          "A repeatable weekly habit — the deal-drop cadence and notify-me opt-in are designed to turn one-off visits into a weekly return loop.",
+          "A sharper commercial proposition — surfacing discount and VIP cashback together, at the point of discovery.",
+          "First-party personalisation data from the taste-capture flow, feeding both merchandising and CRM from a user's first session.",
+        ],
+        table: {
+          head: ["Question", "Signal"],
+          rows: [
+            ["Does the surface earn its place?", "Tab visits, feed engagement, return frequency"],
+            ["Does the weekly drop build a habit?", "Notify-me opt-ins and repeat visits per drop"],
+            ["Do the deals convert?", "Clickouts, transactions, merchant sales, revenue per deal"],
+            ["Is the feed relevant?", "Onboarding completion and engagement by interest"],
+            ["Is it worth building on?", "Qualitative beta feedback via the in-app channel"],
+          ],
+        },
+      },
+    ],
+    reflections: [
+      "The core decision was to treat Product Deals as its own surface with its own tab, not a module inside an existing screen. Leading with the product — price, saving, urgency — is a genuinely different discovery model for VoucherCodes, and it needed room to be that.",
+      "Keeping redemption familiar was deliberate. The feed is new, but the code-copy-and-clickout still does the commercial work — so the bet sits on top of a model that already converts rather than replacing it.",
+      "Shipping it as an honest beta — label, feedback button, notify-me — was the right call for a 0→1 surface. It lets the feature prove itself with real behaviour and real feedback before we invest in scaling it.",
+      "Designing personalisation into the very first session is the part I'm most interested to see play out: if 'what are you into?' makes the feed feel relevant on day one, it should compound into both retention and better merchandising signal.",
+    ],
+  },
+  {
     slug: "merchant-offer-redesign",
     layout: "full",
     mockup: "offer",
