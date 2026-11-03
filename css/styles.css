@@ -128,7 +128,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .wordmark {
   font-family: var(--serif);
   font-weight: 700;
-  line-height: .82;
+  line-height: normal;
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0;
@@ -159,7 +159,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--serif);
   font-weight: 400;
   font-size: 20px;
-  line-height: 22px;
+  line-height: normal;
   color: var(--bio);
   max-width: 300px;
 }
@@ -212,7 +212,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--serif);
   font-weight: 700;
   font-size: 40px;
-  line-height: 1.0;
+  line-height: normal;
   letter-spacing: -0.01em;
   color: var(--ink);
   word-break: break-word;
@@ -221,7 +221,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--sans);
   font-weight: 400;
   font-size: 20px;
-  line-height: 22px;
+  line-height: normal;
   letter-spacing: -1px;
   color: var(--muted);
 }
@@ -449,7 +449,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--sans);
   font-weight: 600;
   font-size: 30px;
-  line-height: 1.02;
+  line-height: normal;
   letter-spacing: -0.6px;
   color: var(--ink);
   max-width: 340px;
@@ -460,7 +460,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--serif);
   font-weight: 700;
   font-size: clamp(64px, 8vw, 105px);
-  line-height: 1.0;
+  line-height: normal;
   letter-spacing: -0.05em;
   color: var(--ink);
 }
@@ -480,7 +480,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--serif);
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.1;
+  line-height: normal;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
