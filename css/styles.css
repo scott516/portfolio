@@ -82,7 +82,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--sans);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -1px;
+  letter-spacing: 0;
   color: var(--nav);
   padding-bottom: 4px;
   white-space: nowrap;
@@ -129,7 +129,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--serif);
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 0;
   font-size: clamp(58px, 15.2vw, 196px);
@@ -213,7 +213,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   font-size: 40px;
   line-height: normal;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: var(--ink);
   word-break: break-word;
 }
@@ -222,7 +222,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 400;
   font-size: 20px;
   line-height: normal;
-  letter-spacing: -1px;
+  letter-spacing: 0;
   color: var(--muted);
 }
 .card__meta {
@@ -232,7 +232,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: 6px;
   font-family: var(--sans);
   font-size: 13px;
-  letter-spacing: -.01em;
+  letter-spacing: 0;
   color: var(--muted);
 }
 .card__meta span { position: relative; }
@@ -252,7 +252,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--sans);
   font-weight: 600;
   font-size: 15px;
-  letter-spacing: -.01em;
+  letter-spacing: 0;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
@@ -450,7 +450,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 600;
   font-size: 30px;
   line-height: normal;
-  letter-spacing: -0.6px;
+  letter-spacing: 0;
   color: var(--ink);
   max-width: 340px;
 }
@@ -461,14 +461,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   font-size: clamp(64px, 8vw, 105px);
   line-height: normal;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   color: var(--ink);
 }
 .stat__label {
   font-family: var(--sans);
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: -0.48px;
+  letter-spacing: 0;
   color: var(--ink);
   margin-top: 6px;
   max-width: 360px;
@@ -481,14 +481,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   font-size: 36px;
   line-height: normal;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: var(--ink);
 }
 .quote__by {
   font-family: var(--sans);
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: -0.48px;
+  letter-spacing: 0;
   color: var(--muted);
   margin-top: 16px;
 }
