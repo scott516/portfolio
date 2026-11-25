@@ -34,6 +34,106 @@ export const site = {
 // layout: "full" cards carry device mockups; "half" cards pair up as text tiles.
 export const caseStudies = [
   {
+    slug: "onboarding-personalisation",
+    layout: "full",
+    mockup: "favourites",
+    title: "Rebuilding app onboarding around personalisation: +38% push opt-ins",
+    cardDescription:
+      "A ground-up rebuild of app onboarding — from a 3-slide intro to a personalised 7+ screen flow that captures favourite brands and asks for push with proof.",
+    subtitle: "Trading raw completion for better-qualified users — and winning where it matters",
+    summary:
+      "A ground-up redesign of the VoucherCodes app onboarding — from a short 3-slide intro to a " +
+      "personalised 7+ screen flow — that lifted push opt-ins from 29% to 40% of installs, grew the " +
+      "7-day clickout rate of users who complete it by 50%, and now captures favourite brands for 61% " +
+      "of new installs. A follow-up iteration, letting returning users sign in mid-flow, then lifted " +
+      "progression through the sign-up step from 83.6% to 86.8%.",
+    heroMetric: { value: "+38%", label: "Push opt-ins — 29% → 40% of installs" },
+    overview: [
+      ["Initiative", "App onboarding redesign — new first-run experience"],
+      ["Partners", "Alex Dernie + the Installables squad (engineering, QA, data)"],
+      ["Surfaces", "App — iOS & Android"],
+      ["Timeline", "Designed late 2025 · launched May 2026 · iterated Jul–Sep 2026"],
+      ["Role", "Product Design"],
+    ],
+    sections: [
+      {
+        title: "Problem",
+        accent: "orange",
+        paras: [
+          "Onboarding is the one flow every new user sees, and it sets up everything that follows: whether they trust us, whether they let us notify them, and whether they ever click out. Our old onboarding — a short 3-slide intro — was leaving value on the table.",
+        ],
+        bullets: [
+          "It didn't earn trust. We had a strong Trustpilot score and a large, active user base, but onboarding showed neither.",
+          "It knew nothing about the user. It captured no signal about which brands or categories people cared about, so nothing could be tailored from the first session.",
+          "It asked for permission cold. The push prompt relied on copy alone, with nothing to show users what they'd be opting in to.",
+          "VIP was a form, not a value exchange. Sign-up didn't make a strong enough case for what members actually get.",
+          "It optimised for the wrong thing. A short flow kept completion high (73% of installs), but completion alone didn't tell us whether we were activating the right users.",
+        ],
+        closer:
+          "The underlying question: could a longer, more personal onboarding bring in better users — even if fewer people reached the end? It built directly on an earlier win where removing a screen lifted push opt-ins; this time the job was to rebuild the whole flow, with every screen earning its place.",
+      },
+      {
+        title: "Process",
+        accent: "blue",
+        subsections: [
+          { h: "Make the first three screens earn the next tap", p: "The opening screens had one job: convince users the app is worth setting up. A landing carousel of top brands and products ('The UK's top savings are waiting'), a pain-point screen that empathises before it sells, and a trust-building screen — an inverse waterfall of real Trustpilot reviews plus the number of shoppers saving every month." },
+          { h: "Personalise before asking for anything", p: "Rather than requesting permissions up front, we asked users what they're into. Categories and brands were combined into a single 'Your favourites' screen on a flexible grid, with a minimum of three picks: the CTA counts down ('Pick 3 more to continue') until the user commits enough signal to personalise. A bottom overlay indexes everything favourited and expands to edit in place, and a 'Most popular brands' module favourites a bundle in one tap." },
+          { h: "Ask for push with proof, not promises", p: "The push opt-in screen was placed after favourites on purpose. A brief 'Building your personalised VoucherCodes experience…' loader signals we're building something for them, then an auto-playing carousel 'dangles the offers' from the brands they've just favourited under 'Never miss a deal' — so saying yes feels like a benefit, not a cost." },
+          { h: "Reframe VIP sign-up as a value exchange", p: "'Why become a VIP?' leads with what members get — gift cards for their usual shops, tailored offers, exclusive prizes — then shows how much members earn each month with a top offer as proof. If someone who has picked favourites tries to skip, an overlay warns their preferences won't be saved ('Lose your personalised offers?'). Every step after the opening screens has a skip route, so no one gets trapped." },
+          { h: "Ship it, then watch it closely", p: "Launched in May 2026 to 100% of iOS and Android users. With Mixpanel wired into our Claude Code setup for product and design work, we could monitor the rollout closely, catch edge-case teething issues quickly, and see where the flow needed work." },
+          { h: "Iterate on the drop-off", p: "The data surfaced a leak at sign-up — existing account holders who wanted to sign in, not sign up, were churning and losing the preferences they'd just picked. I owned this iteration as product owner, signposting the single 'Continue with your email' entry point our move to Ory had unlocked, right where they were getting stuck." },
+        ],
+      },
+      {
+        title: "Outcome",
+        accent: "green",
+        paras: [
+          "Live with 100% of iOS and Android users since May 2026. The longer flow deliberately traded raw completion for better-qualified users — and that trade paid off where it matters.",
+        ],
+        table: {
+          head: ["Metric", "Before → After", "Impact"],
+          rows: [
+            ["Push opt-in (% of all installs)", "29% → 40%", "+38%"],
+            ["7-day clickout — users who complete onboarding", "34% → 51%", "+50%"],
+            ["VIP enrolment within 7 days", "—", "+31%"],
+            ["Search activation", "25.4% → 30.8%", "+21%"],
+            ["Opt-in rate on the push screen", "—", "68%"],
+          ],
+        },
+        bullets: [
+          "61% of new installs now favourite a merchant during onboarding; 25% select a category interest; 5% sign up as VIP in the flow.",
+          "The share of users with favourites — and the average number of favourites per user — both hit all-time highs.",
+        ],
+        closer:
+          "Going from 1–2 screens to 7+ always meant fewer people reaching the end: completion fell from 73% to 43% of installs, and the 7-day clickout rate across all installs dipped from 25% to 22%. Both were expected — the longer flow filters out low-intent installs and engages high-intent ones far more deeply. The biggest risk going in was that a longer flow would hurt push opt-ins. It did the opposite.",
+      },
+      {
+        title: "Iteration",
+        accent: "purple",
+        paras: [
+          "A number of users reaching 'Why become a VIP?' were existing account holders trying to sign in, not sign up — and with no obvious way in, they churned, losing the preferences they'd just picked. Three targeted changes signposted our single 'Continue with your email' entry point: a sign-in button in the VIP header, another on the skip overlay, and clearer overlay buttons ('Save my preferences' / 'Delete my preferences') that make the consequence of skipping explicit.",
+        ],
+        table: {
+          head: ["Metric", "Before → After", "Change"],
+          rows: [
+            ["Users progressing past the VIP sign-up step", "83.6% → 86.8%", "+3.2pp"],
+            ["Tapping ‘Skip VIP’", "38.4% → 35.5%", "−2.9pp"],
+            ["Tapping ‘Sign in’ (new)", "—", "4.3%"],
+            ["Tapping ‘Unlock VIP Rewards’", "64.4% → 62%", "−2.4pp"],
+          ],
+        },
+        closer:
+          "A small, targeted change with a clear effect: 4.3% of users now sign in directly, fewer skip, and more carry their preferences through to the end. Next: keep reducing drop-off screen by screen to win back completion without losing the signal, and put the new brand and category data to work personalising the in-app experience and CRM.",
+      },
+    ],
+    reflections: [
+      "My last onboarding win came from removing a screen; this one came from adding them. That's not a contradiction — the test both times was whether each screen earns its place. Here, every screen either builds trust, captures signal, or asks for something with proof in hand.",
+      "Sequencing was the real design decision. Putting push opt-in after favourites meant we could ask with relevant offers already on screen — and a 68% opt-in rate on that screen is the clearest evidence it worked.",
+      "Letting completion fall from 73% to 43% was uncomfortable, and I won't pretend the dip in overall clickouts doesn't matter. But completion was never the goal: users who finish now click out at 51%, and the next job is keeping that quality while losing fewer people along the way.",
+      "Drop-off isn't always disinterest. Some of the people leaving at sign-up were existing account holders with no obvious way in — a couple of well-placed sign-in buttons now let 4.3% through with their preferences intact.",
+    ],
+  },
+  {
     slug: "product-deals",
     layout: "full",
     mockup: "deals",

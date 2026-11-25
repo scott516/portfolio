@@ -109,6 +109,23 @@ function phoneScreen(type, v = "a") {
         <p>${v === "a" ? "Be first to know when a new deal drops from the brands you love." : "Turn on alerts and we'll ping you the moment a great deal lands."}</p>
         <div class="scr__cta2"><span class="b p">Allow notifications</span><span class="b g">Not now</span></div>
       </div>`;
+    case "favourites": {
+      const picks = v === "a"
+        ? { asos: true, nike: false, boots: true, currys: false, cta: "Pick 1 more" }
+        : { asos: true, nike: true, boots: true, currys: true, cta: "Continue" };
+      const tile = (label, on) => `<span class="favtile${on ? " on" : ""}">${label}${on ? " ✓" : ""}</span>`;
+      return `<div class="scr scr--fav">
+        <div class="scr__status"><span>9:41</span><span class="dots">••• 5G ▮</span></div>
+        <div class="scr__favhead">Your favourites</div>
+        <div class="scr__favsearch">🔍 Search brands &amp; categories</div>
+        <div class="scr__favgrid">
+          ${tile("ASOS", picks.asos)}${tile("Nike", picks.nike)}${tile("Boots", picks.boots)}
+          ${tile("Argos", false)}${tile("Currys", picks.currys)}${tile("Beauty", false)}
+          ${tile("Travel", false)}${tile("Food", false)}${tile("Tech", false)}
+        </div>
+        <div class="scr__foot"><div class="scr__btn">${picks.cta}</div></div>
+      </div>`;
+    }
     case "stamp":
       return `<div class="scr scr--stamp">
         <div class="scr__status"><span>9:41</span><span class="dots">••• 5G ▮</span></div>
