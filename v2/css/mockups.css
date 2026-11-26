@@ -1,0 +1,161 @@
+/* Device mockups — copied verbatim from css/styles.css (lines 288–445) so the
+   v2 site renders the same phone screens without loading the original
+   stylesheet. Only change: .phone__screen uses the v2 sans token. */
+/* ==========================================================================
+   Device mockups (pure CSS / inline SVG screens)
+   ========================================================================== */
+.phone {
+  --pw: clamp(150px, 15vw, 208px);
+  width: var(--pw);
+  aspect-ratio: 208 / 430;
+  background: #0c0c0d;
+  border-radius: 30px;
+  padding: 7px;
+  box-shadow: 0 22px 44px -20px rgba(0,0,0,.45), inset 0 0 0 1.5px #2a2a2c;
+  flex: 0 0 auto;
+}
+.phone__screen {
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f4f6f7;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--sans, "Inter Tight", sans-serif);
+}
+.phone__notch {
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 34%; height: 14px;
+  background: #0c0c0d;
+  border-radius: 0 0 10px 10px;
+  z-index: 5;
+}
+.scr { height: 100%; display: flex; flex-direction: column; font-size: 8px; color: #1a1a1a; }
+.scr__status {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 12px 4px; font-size: 8px; font-weight: 700;
+}
+.scr__status .dots { letter-spacing: 1px; }
+.scr__pad { padding: 4px 10px; }
+.scr__banner {
+  margin: 2px 10px; padding: 5px 8px; border-radius: 6px;
+  background: #101828; color: #fff; font-weight: 700; font-size: 7px;
+  display: flex; align-items: center; gap: 5px;
+}
+.scr__banner .coin { width: 12px; height: 12px; border-radius: 50%; background: #ffd200; color:#101828; display:grid; place-items:center; font-size:6px; }
+.scr__card {
+  margin: 6px 10px; border-radius: 8px; background: #fff;
+  box-shadow: 0 6px 14px -8px rgba(0,0,0,.25); overflow: hidden;
+}
+.scr__hero { height: 58px; background: linear-gradient(120deg,#2b2b2b,#4a4a4a); position: relative; }
+.scr__tags { position:absolute; left:6px; top:6px; display:flex; gap:4px; }
+.chip { font-size:6px; font-weight:800; letter-spacing:.03em; padding:2px 4px; border-radius:3px; }
+.chip--ex { background:#101828; color:#fff; }
+.chip--rw { background:#ffd200; color:#101828; }
+.scr__cbody { padding: 6px 8px; }
+.scr__ctitle { font-weight: 800; font-size: 8px; line-height: 1.15; }
+.scr__steps { display:flex; gap:5px; margin-top:6px; }
+.scr__step { flex:1; text-align:center; }
+.scr__step b { display:grid; place-items:center; width:14px; height:14px; margin:0 auto 2px; border-radius:50%; background:#eef0f2; font-size:7px; }
+.scr__foot { margin-top:auto; padding:8px 10px; display:flex; gap:6px; align-items:center; }
+.scr__btn { flex:1; text-align:center; padding:6px; border-radius:6px; background:#ffd200; font-weight:800; font-size:8px; color:#101828; }
+.scr__ico { width:22px; height:22px; border-radius:6px; background:#eef0f2; display:grid; place-items:center; font-size:9px; }
+
+/* profile completion screen */
+.scr--profile { background:#fff; }
+.scr__fill { height:5px; border-radius:3px; background:#eef0f2; margin:4px 0; overflow:hidden; }
+.scr__fill i { display:block; height:100%; background:#101828; }
+.scr__field { border:1px solid #e6e9ec; border-radius:6px; padding:6px 7px; margin-top:5px; font-size:7px; color:#8a8f96; }
+.scr__field.on { border-color:#101828; color:#101828; font-weight:700; }
+
+/* favourites / personalisation screen */
+.scr--fav { background:#fff; }
+.scr__favhead { font-weight:800; font-size:11px; padding:6px 10px 2px; }
+.scr__favsearch { margin:3px 10px 5px; padding:5px 8px; border-radius:7px; background:#f4f6f7; color:#8a8f96; font-size:7px; }
+.scr__favgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; padding:0 10px; }
+.favtile { border:1px solid #e6e9ec; border-radius:7px; padding:8px 3px; text-align:center; font-size:7px; font-weight:700; color:#6a6f77; }
+.favtile.on { background:#101828; border-color:#101828; color:#fff; }
+
+/* stories screen */
+.scr--stories { background:#0c0c0d; color:#fff; }
+.scr__coins { display:flex; gap:6px; padding:8px 10px; overflow:hidden; }
+.coin-ring { width:30px; height:30px; border-radius:50%; padding:2px; background:linear-gradient(135deg,#ff5f6d,#ffc371); flex:0 0 auto; }
+.coin-ring i { display:block; width:100%; height:100%; border-radius:50%; background:#2a2a2c; }
+.scr__story { flex:1; margin:2px 10px 10px; border-radius:10px; background:linear-gradient(160deg,#3a1c71,#d76d77,#ffaf7b); position:relative; }
+.scr__story .bars { position:absolute; top:6px; left:6px; right:6px; display:flex; gap:3px; }
+.scr__story .bars i { flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.5); }
+.scr__story .bars i.on { background:#fff; }
+.scr__story .cta { position:absolute; left:8px; right:8px; bottom:8px; text-align:center; padding:6px; border-radius:6px; background:#fff; color:#101828; font-weight:800; font-size:8px; }
+
+/* onboarding / push opt-in screen */
+.scr--onboard { background:#fff; align-items:center; text-align:center; padding:14px 12px; justify-content:center; }
+.scr__bell { width:44px; height:44px; border-radius:50%; background:#101828; color:#ffd200; display:grid; place-items:center; font-size:20px; margin:0 auto 10px; }
+.scr--onboard h4 { margin:0; font-size:11px; font-weight:800; }
+.scr--onboard p { font-size:8px; color:#6a6f77; margin:5px 0 0; line-height:1.35; }
+.scr__cta2 { margin-top:auto; width:100%; }
+.scr__cta2 .b { display:block; padding:7px; border-radius:7px; font-weight:800; font-size:8px; }
+.scr__cta2 .b.p { background:#ffd200; color:#101828; }
+.scr__cta2 .b.g { color:#6a6f77; }
+
+/* loyalty stamp screen */
+.scr--stamp { background:#fff; }
+.scr__stampcard { margin:8px 10px; padding:9px; border-radius:10px; background:#101828; color:#fff; }
+.scr__stampcard .lbl { font-size:7px; opacity:.8; }
+.scr__stampcard .amt { font-size:12px; font-weight:800; margin-top:1px; }
+.scr__stamps { display:grid; grid-template-columns:repeat(5,1fr); gap:5px; margin-top:8px; }
+.stamp { aspect-ratio:1; border-radius:50%; border:1px dashed rgba(255,255,255,.35); display:grid; place-items:center; font-size:8px; }
+.stamp.on { background:#ffd200; color:#101828; border-style:solid; border-color:#ffd200; font-weight:800; }
+.scr__rows { padding:2px 10px; }
+.scr__row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #eef0f2; font-size:8px; }
+.scr__row b { font-weight:800; }
+
+/* workshop screen */
+.scr--workshop { background:#f4f6f7; padding:10px; gap:5px; }
+.scr--workshop .note { border-radius:5px; padding:6px; font-size:7px; font-weight:700; color:#101828; }
+.n1 { background:#ffd200; } .n2 { background:#a7f3d0; } .n3 { background:#fbcfe8; } .n4 { background:#bfdbfe; }
+.scr__cluster { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
+
+/* design system screen */
+.scr--system { background:#fff; padding:10px; gap:6px; }
+.scr__tokrow { display:flex; gap:5px; }
+.tok { flex:1; height:16px; border-radius:4px; }
+.scr__complist { display:flex; flex-direction:column; gap:5px; }
+.scr__comp { border:1px solid #e6e9ec; border-radius:6px; padding:5px 6px; font-size:7px; display:flex; justify-content:space-between; align-items:center; }
+.scr__comp .pill { padding:2px 5px; border-radius:10px; font-size:6px; font-weight:800; }
+.pill--web { background:#e0e7ff; color:#3730a3; } .pill--app { background:#dcfce7; color:#166534; }
+
+/* biind music screen */
+.scr--biind { background:#0d0b1a; color:#fff; padding:0; }
+.scr--biind .top { padding:12px 10px 6px; font-weight:800; font-size:11px; letter-spacing:.02em; background:linear-gradient(180deg,#241a4d,transparent); }
+.scr__albums { display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:4px 10px; }
+.album { border-radius:8px; aspect-ratio:1; }
+.album:nth-child(1){background:linear-gradient(135deg,#f72585,#7209b7);}
+.album:nth-child(2){background:linear-gradient(135deg,#4361ee,#4cc9f0);}
+.album:nth-child(3){background:linear-gradient(135deg,#f9c74f,#f3722c);}
+.album:nth-child(4){background:linear-gradient(135deg,#43aa8b,#90be6d);}
+.scr__now { margin-top:auto; display:flex; align-items:center; gap:8px; padding:8px 10px; background:rgba(255,255,255,.06); }
+.scr__now .art { width:22px; height:22px; border-radius:5px; background:linear-gradient(135deg,#f72585,#4361ee); }
+.scr__now .t { font-size:8px; font-weight:800; } .scr__now .s { font-size:7px; opacity:.6; }
+.scr__now .play { margin-left:auto; width:20px; height:20px; border-radius:50%; background:#fff; color:#0d0b1a; display:grid; place-items:center; font-size:9px; }
+
+/* product deals screen */
+.scr--deals { background:#f4f6f7; }
+.scr__dealhead { display:flex; align-items:center; gap:5px; padding:6px 10px 2px; font-weight:800; font-size:11px; }
+.scr__dealhead .beta { font-size:6px; font-weight:800; letter-spacing:.06em; padding:2px 4px; border-radius:3px; background:#101828; color:#ffd200; }
+.scr__drop { margin:2px 10px; padding:4px 7px; border-radius:6px; background:#fff3cd; color:#8a6d00; font-weight:700; font-size:6.5px; }
+.scr__deal { margin:6px 10px; border-radius:9px; background:#fff; box-shadow:0 6px 14px -8px rgba(0,0,0,.25); overflow:hidden; }
+.scr__dealimg { height:62px; position:relative; }
+.scr__dealimg .chip { position:absolute; top:5px; font-size:6px; font-weight:800; padding:2px 4px; border-radius:3px; }
+.chip--vip { left:5px; background:#ffd200; color:#101828; }
+.chip--hot { right:5px; background:rgba(0,0,0,.55); color:#fff; }
+.scr__dealbody { padding:6px 8px; }
+.scr__dealtitle { font-weight:800; font-size:8px; line-height:1.15; }
+.scr__dealprice { margin-top:3px; font-size:9px; }
+.scr__dealprice b { color:#101828; } .scr__dealprice s { color:#9aa0a6; font-size:7px; margin-left:3px; }
+.scr__dealtag { margin-top:3px; display:inline-block; font-size:6.5px; font-weight:800; padding:2px 5px; border-radius:10px; background:#dcfce7; color:#166534; }
+.scr__dealmeta { display:flex; justify-content:space-between; align-items:center; margin-top:5px; font-size:7px; color:#6a6f77; }
+.scr__dealmeta .timer { font-weight:800; color:#c2410c; }
+
