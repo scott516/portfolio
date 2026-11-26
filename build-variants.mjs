@@ -1,5 +1,10 @@
-// Generates accent-color variants of the site for side-by-side comparison.
+// Generates design variants of the site for side-by-side comparison.
 //   node build-variants.mjs   ->   versions/<slug>/ per variant + versions.html
+//
+// Accent variants (cobalt, amber, verdant) are full copies of the site with
+// one colour changed. "Knockout" is a separate redesign built by
+// build-knockout.mjs from the same content. The original site at the repo
+// root is never modified by this script.
 //
 // Layout, grid, and typography are untouched in every variant — the Figma
 // template match stays exact. Only --red (the site's sole interactive
@@ -8,6 +13,7 @@ import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { build } from "./build.mjs";
+import { buildKnockout } from "./build-knockout.mjs";
 import { site } from "./data/site.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -41,6 +47,12 @@ async function buildVersionsPage() {
   const cards = [
     swatchCard({ label: "Default — Figma exact", accent: "#ff0000", note: "The original template match: red accent.", href: "index.html" }),
     ...variants.map((v) => swatchCard({ label: v.label, accent: v.accent, note: v.note, href: `versions/${v.slug}/index.html` })),
+    swatchCard({
+      label: "Knockout — redesign",
+      accent: "linear-gradient(135deg,#000 0 50%,#DEC1FC 50% 100%)",
+      note: "A dark, editorial redesign: the name cut out of a black band to reveal video.",
+      href: "versions/knockout/index.html",
+    }),
   ].join("\n      ");
 
   const html = `<!doctype html>
@@ -78,8 +90,9 @@ async function buildVersionsPage() {
     <header style="margin-top:24px">
       <h1 class="wordmark" style="font-size:clamp(36px,6vw,64px)">Design variants</h1>
       <p style="font-family:var(--sans); color:var(--muted); font-size:16px; max-width:52ch; margin-top:12px;">
-        Same layout, grid, and typography throughout — only the interactive accent colour changes
-        (brand mark, nav/footer/card hover states).
+        The accent variants keep the original layout, grid, and typography and only change the
+        interactive accent colour (brand mark, nav/footer/card hover states). Knockout is a full
+        redesign in a different visual style, built from the same content.
       </p>
     </header>
     <div class="variants-grid">
@@ -98,8 +111,9 @@ async function main() {
     await copyStatic(outDir);
     await build({ outDir, accent: v.accent });
   }
+  await buildKnockout();
   await buildVersionsPage();
-  console.log(`Built ${variants.length} variants + versions.html gallery.`);
+  console.log(`Built ${variants.length} accent variants + Knockout + versions.html gallery.`);
 }
 
 main().catch((e) => {

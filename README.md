@@ -48,6 +48,25 @@ a `versions.html` gallery page at the repo root linking to each one,
 including the default. Add or edit variants in the `variants` array at the
 top of `build-variants.mjs`.
 
+### Knockout (redesign variant)
+
+`versions/knockout/` is a full redesign in a different visual style: a dark,
+editorial site where the name is cut out of a black band so a looping video
+shows through the letters. It uses the same content as the original site
+(`data/site.mjs`), so case studies, stats and the testimonial stay in sync.
+The original site is never touched by it.
+
+- **`build-knockout.mjs`** generates `versions/knockout/index.html` and
+  `versions/knockout/work/<slug>.html`, including the LUCIA SCOTT wordmark
+  path. Run it on its own (`node build-knockout.mjs`) or via
+  `node build-variants.mjs`, which also lists it in `versions.html`.
+- **`versions/knockout/css/knockout.css`**, **`js/knockout.js`** and
+  **`assets/`** (hero video, poster, self-hosted Hanken Grotesk and
+  JetBrains Mono) are hand-authored and not overwritten by the build.
+- To use different footage, replace `assets/hero.mp4` (H.264) and
+  `assets/hero-poster.jpg` (its first frame). The framing focal point is set
+  at the top of `js/knockout.js` (`FX`, `FY`, in video pixels).
+
 ## Preview locally
 
 ```bash
