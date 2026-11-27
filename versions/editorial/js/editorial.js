@@ -1,4 +1,4 @@
-// Portfolio v2 interactions. Everything here is progressive enhancement:
+// Editorial variant interactions. Everything here is progressive enhancement:
 // with JS off the pages are fully readable, just without motion, the theme
 // switch or the hover previews.
 (function () {

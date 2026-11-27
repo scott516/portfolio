@@ -48,14 +48,13 @@ a `versions.html` gallery page at the repo root linking to each one,
 including the default. Add or edit variants in the `variants` array at the
 top of `build-variants.mjs`.
 
-## v2 — editorial redesign
+## Editorial variant (a second design)
 
-A second, standalone design lives in **`v2/`** (live at `/portfolio/v2/`).
-The original site above is untouched; both read the same case studies from
-`data/site.mjs`.
+A separate redesign lives in **`versions/editorial/`**. The original site
+above is untouched; both read the same case studies from `data/site.mjs`.
 
 ```bash
-node build-v2.mjs      # writes v2/index.html + v2/work/<slug>.html
+node build-editorial.mjs   # writes versions/editorial/index.html + work/<slug>.html
 ```
 
 - **Look:** warm off-white `#ecebeb`, near-black `#161310`, grey labels
@@ -64,15 +63,32 @@ node build-v2.mjs      # writes v2/index.html + v2/work/<slug>.html
   a centred serif statement; a numbered work index with a hover preview.
 - **Grid:** 15 columns in vw units (1.39vw margins and gutters).
 - **Type:** Newsreader (light, optical sizes) for display and Inter Tight for
-  UI — both SIL OFL and self-hosted in `v2/fonts/`. They are free stand-ins
-  for **Merchant Extra Light** and **PP Neue Montreal**: if you license those,
-  add `@font-face` rules named `"Merchant"` / `"PP Neue Montreal"` and the
-  font stacks in `v2/css/v2.css` will use them first.
-- **Files:** `build-v2.mjs` (templates + v2-only copy such as the status
-  line, about statement, contact blurb and short work-index labels),
-  `v2/css/v2.css`, `v2/css/mockups.css` (the phone mockup styles, copied from
-  `css/styles.css`), `v2/js/v2.js` (theme, line reveals, hover previews,
-  scroll-spy, mobile menu).
+  UI — both SIL OFL and self-hosted in `versions/editorial/fonts/`. They are
+  free stand-ins for **Merchant Extra Light** and **PP Neue Montreal**: if you
+  license those, add `@font-face` rules named `"Merchant"` /
+  `"PP Neue Montreal"` and the font stacks in
+  `versions/editorial/css/editorial.css` will use them first.
+- **Files:** `build-editorial.mjs` (templates + editorial-only copy such as
+  the status line, about statement, contact blurb and short work-index
+  labels), `versions/editorial/css/editorial.css`,
+  `versions/editorial/css/mockups.css` (the phone mockup styles, copied from
+  `css/styles.css`), `versions/editorial/js/editorial.js` (theme, line
+  reveals, hover previews, scroll-spy, mobile menu).
+
+## Choosing the homepage (swap any time)
+
+**`live-site.json`** decides which design visitors see at the site root. Edit
+the one word and commit to `main` (the GitHub web editor is fine); the deploy
+workflow republishes in about a minute. Nothing else changes, and the other
+design stays online:
+
+| `"homepage"` | At `/portfolio/` | The other design |
+| --- | --- | --- |
+| `"original"` (default) | the original site | editorial at `/portfolio/versions/editorial/` |
+| `"editorial"` | the editorial design | original at `/portfolio/original/` |
+
+`publish.mjs` does the assembling (into `_site/`, which is what gets
+deployed); run `node publish.mjs` locally to preview either arrangement.
 
 ## Preview locally
 

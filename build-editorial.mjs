@@ -1,8 +1,9 @@
 // ---------------------------------------------------------------------------
-// Static site generator for the v2 "editorial" portfolio.
-//   node build-v2.mjs   ->   writes v2/index.html + v2/work/<slug>.html
+// Static site generator for the "editorial" design variant of the portfolio.
+//   node build-editorial.mjs   ->   writes versions/editorial/index.html
+//                                   + versions/editorial/work/<slug>.html
 //
-// v2 is a second, standalone design of the same portfolio: a 15-column vw
+// A second, standalone design of the same portfolio: a 15-column vw
 // grid, a light display serif (Newsreader, standing in for Merchant) paired
 // with a tight grotesk (Inter Tight, standing in for PP Neue Montreal), and a
 // warm off-white / near-black palette with a light/dark mode switch.
@@ -10,19 +11,23 @@
 // The original site (index.html, work/, css/, js/ — built by build.mjs) is
 // left untouched. Both designs read the same case-study content from
 // data/site.mjs, so edits there flow into both after a rebuild.
+//
+// The folder is self-contained (only relative links, its own copy of the
+// mark image), so publish.mjs can serve it either at /versions/editorial/
+// or as the homepage — see live-site.json.
 // Pure Node, no dependencies.
 // ---------------------------------------------------------------------------
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, copyFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { site, caseStudies } from "./data/site.mjs";
 import { phoneScreen } from "./build.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-const OUT = join(ROOT, "v2");
+const OUT = join(ROOT, "versions", "editorial");
 
-/* ------------------------------------------------------------ v2 copy */
-// Copy that only the v2 design uses. The two "about" statements are the bio
+/* ------------------------------------------------------ editorial copy */
+// Copy that only the editorial design uses. The two "about" statements are the bio
 // from data/site.mjs, split into two sentences and put in the first person.
 const copy = {
   status: "Open to senior roles",
@@ -72,7 +77,7 @@ const kv = (k, v, cls = "") =>
 const phone = (type, v) =>
   `<div class="phone"><span class="phone__notch"></span><div class="phone__screen">${phoneScreen(type, v)}</div></div>`;
 
-// A 3:4 tile holding a fixed-size 360×480 stage; js/v2.js scales the stage to
+// A 3:4 tile holding a fixed-size 360×480 stage; js/editorial.js scales the stage to
 // the tile's width, so the phone screens stay crisp at any size.
 const tile = (slides, { cls = "", cycle = false } = {}) =>
   `<div class="tile ${cls}"><div class="stage"${cycle ? " data-cycle" : ""}>${slides}</div></div>`;
@@ -102,7 +107,7 @@ function head({ title, description, base = "" }) {
   <link rel="preload" href="${base}fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
   <script>(function(){try{var t=localStorage.getItem("ls-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}})();</script>
   <link rel="stylesheet" href="${base}css/mockups.css">
-  <link rel="stylesheet" href="${base}css/v2.css">
+  <link rel="stylesheet" href="${base}css/editorial.css">
 </head>`;
 }
 
@@ -258,7 +263,7 @@ function renderHome() {
     <section class="contact" id="contact" data-spy="contact" aria-label="Contact">
       <div class="contact__card">
         <p class="contact__p">${esc(copy.contact)}</p>
-        <img class="contact__mark" src="../assets/mark.png" width="192" height="192" alt="">
+        <img class="contact__mark" src="assets/mark.png" width="192" height="192" alt="">
         <ul class="contact__links">
           <li>${roll(`mailto:${site.email}`, mailLabel)}</li>
           <li>${roll(site.linkedinUrl, liLabel, true)}</li>
@@ -269,7 +274,7 @@ function renderHome() {
 
   ${footer()}
 
-  <script src="js/v2.js" defer></script>
+  <script src="js/editorial.js" defer></script>
 </body>
 </html>
 `;
@@ -375,24 +380,26 @@ function renderCase(cs, i) {
 
   ${footer()}
 
-  <script src="../js/v2.js" defer></script>
+  <script src="../js/editorial.js" defer></script>
 </body>
 </html>
 `;
 }
 
 /* -------------------------------------------------------------------- run */
-export async function buildV2() {
+export async function buildEditorial() {
   await mkdir(join(OUT, "work"), { recursive: true });
+  await mkdir(join(OUT, "assets"), { recursive: true });
+  await copyFile(join(ROOT, "assets", "mark.png"), join(OUT, "assets", "mark.png"));
   await writeFile(join(OUT, "index.html"), renderHome(), "utf8");
   for (let i = 0; i < caseStudies.length; i++) {
     await writeFile(join(OUT, "work", `${caseStudies[i].slug}.html`), renderCase(caseStudies[i], i), "utf8");
   }
-  console.log(`Built v2/: index.html + ${caseStudies.length} case study pages.`);
+  console.log(`Built versions/editorial/: index.html + ${caseStudies.length} case study pages.`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  buildV2().catch((e) => {
+  buildEditorial().catch((e) => {
     console.error(e);
     process.exit(1);
   });

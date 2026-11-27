@@ -29,8 +29,13 @@ jobs:
       - name: Regenerate site from data/site.mjs
         run: node build.mjs
 
-      - name: Regenerate the v2 (editorial) site from data/site.mjs
-        run: node build-v2.mjs
+      - name: Regenerate the editorial variant from data/site.mjs
+        run: node build-editorial.mjs
+
+      # live-site.json chooses which design is the homepage; the other stays
+      # published at its own path. See publish.mjs.
+      - name: Assemble the published site
+        run: node publish.mjs
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -38,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
   deploy:
     needs: build

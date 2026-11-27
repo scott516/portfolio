@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Lucia Scott — Portfolio v2 ("editorial")
+   Lucia Scott — Portfolio, "editorial" design variant
    A 15-column vw grid, a light display serif + tight grotesk, and a warm
    off-white / near-black palette with a light/dark switch.
 
@@ -168,7 +168,7 @@ a.kv__v:hover { opacity: .7; }
 .menu-open { overflow: hidden; }
 
 /* ==========================================================================
-   Media tiles — a 360×480 stage scaled (by js/v2.js) to the tile's width
+   Media tiles — a 360×480 stage scaled (by js/editorial.js) to the tile's width
    ========================================================================== */
 .tile {
   --k: .6;
@@ -232,7 +232,7 @@ a.kv__v:hover { opacity: .7; }
 .statement--s { max-width: 64vw; font-size: var(--fs-quote); line-height: 1.15; letter-spacing: -.035em; }
 .statement--m { max-width: 70.83vw; font-size: var(--fs-quote); line-height: 1.15; letter-spacing: -.035em; }
 
-/* line-by-line reveal (js/v2.js splits [data-lines] into .ln rows) */
+/* line-by-line reveal (js/editorial.js splits [data-lines] into .ln rows) */
 .ln { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
 .ln__i { display: block; }
 .js [data-lines].is-split:not(.is-in) .ln__i { transform: translateY(105%); }
