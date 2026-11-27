@@ -48,6 +48,48 @@ a `versions.html` gallery page at the repo root linking to each one,
 including the default. Add or edit variants in the `variants` array at the
 top of `build-variants.mjs`.
 
+## Editorial variant (a second design)
+
+A separate redesign lives in **`versions/editorial/`**. The original site
+above is untouched; both read the same case studies from `data/site.mjs`.
+
+```bash
+node build-editorial.mjs   # writes versions/editorial/index.html + work/<slug>.html
+```
+
+- **Look:** warm off-white `#ecebeb`, near-black `#161310`, grey labels
+  `#787878`; a light/dark mode switch (remembered per visitor); a fixed
+  four-column header of grey label / bold value pairs; a giant serif name;
+  a centred serif statement; a numbered work index with a hover preview.
+- **Grid:** 15 columns in vw units (1.39vw margins and gutters).
+- **Type:** Newsreader (light, optical sizes) for display and Inter Tight for
+  UI — both SIL OFL and self-hosted in `versions/editorial/fonts/`. They are
+  free stand-ins for **Merchant Extra Light** and **PP Neue Montreal**: if you
+  license those, add `@font-face` rules named `"Merchant"` /
+  `"PP Neue Montreal"` and the font stacks in
+  `versions/editorial/css/editorial.css` will use them first.
+- **Files:** `build-editorial.mjs` (templates + editorial-only copy such as
+  the status line, about statement, contact blurb and short work-index
+  labels), `versions/editorial/css/editorial.css`,
+  `versions/editorial/css/mockups.css` (the phone mockup styles, copied from
+  `css/styles.css`), `versions/editorial/js/editorial.js` (theme, line
+  reveals, hover previews, scroll-spy, mobile menu).
+
+## Choosing the homepage (swap any time)
+
+**`live-site.json`** decides which design visitors see at the site root. Edit
+the one word and commit to `main` (the GitHub web editor is fine); the deploy
+workflow republishes in about a minute. Nothing else changes, and the other
+design stays online:
+
+| `"homepage"` | At `/portfolio/` | The other design |
+| --- | --- | --- |
+| `"original"` (default) | the original site | editorial at `/portfolio/versions/editorial/` |
+| `"editorial"` | the editorial design | original at `/portfolio/original/` |
+
+`publish.mjs` does the assembling (into `_site/`, which is what gets
+deployed); run `node publish.mjs` locally to preview either arrangement.
+
 ## Preview locally
 
 ```bash

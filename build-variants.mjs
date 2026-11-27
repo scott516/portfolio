@@ -41,6 +41,7 @@ async function buildVersionsPage() {
   const cards = [
     swatchCard({ label: "Default — Figma exact", accent: "#ff0000", note: "The original template match: red accent.", href: "index.html" }),
     ...variants.map((v) => swatchCard({ label: v.label, accent: v.accent, note: v.note, href: `versions/${v.slug}/index.html` })),
+    swatchCard({ label: "Editorial", accent: "#161310", note: "A separate redesign: display serif, 15-column grid, light/dark mode (built by build-editorial.mjs).", href: "versions/editorial/index.html" }),
   ].join("\n      ");
 
   const html = `<!doctype html>

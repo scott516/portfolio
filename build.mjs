@@ -78,7 +78,7 @@ const wordmarkImg = (base = "") =>
   `<img class="wordmark-img" src="${base}assets/wordmark.png" width="2477" height="468" alt="Lucia Scott">`;
 
 /* --------------------------------------------------------- device screens */
-function phoneScreen(type, v = "a") {
+export function phoneScreen(type, v = "a") {
   switch (type) {
     case "offer": {
       const title = v === "a"
